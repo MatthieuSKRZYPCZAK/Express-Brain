@@ -1,4 +1,4 @@
-![logo](/public/img/expressbrain.png)
+![logo](/public/img/expressbrain1.png)
 
 # Express Brain
 
