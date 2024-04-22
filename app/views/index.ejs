@@ -1,24 +1,42 @@
 <%- include('_header') %>
     <div>
         <h1 class="bold">
-            <%= title %>
+            EXPRESS BRAINS
         </h1>
         <h2>Découvrez en un minimul de tour le nombre qui se cache derrière la carte mistère !</h2>
-
         <div class="d-flex justify-content-center pt-5">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
+                    <i class="d-flex justify-content-center icons-custom pb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#3C518E" class="bi bi-question-diamond" viewBox="0 0 16 16">
+                            <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.48 1.48 0 0 1 0-2.098zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                        </svg>
+                    </i>                    
                     <h5 class="card-title">Qui suis-je ?</h5>
                     <p class="card-text">Quel nombre se cache derrière cette carte mistère ?</p>
-                    <form action="/mistere" method="post">
-                        <div class="mb-3">
-                            <label for="city" class="form-label"></label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="?" />
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-green">J'ai trouvé !</button>
-                        </div>                        
-                    </form>
+                    <% if(flash && flash.status && flash.status === "success" ) { %>
+                        <form action="/" method="post" class="pb-3">
+                            <div class="d-flex justify-content-center">
+                                <input type="hidden" name="playAgain" value="1">
+                                <button type="submit" class="btn btn-green">Rejouer !</button>
+                            </div>                        
+                        </form>                        
+                    <% } else { %> 
+                        <form action="/" method="post" class="pb-3">
+                            <div class="mb-3">
+                                <input type="number" class="form-control" id="reponse" name="reponse" placeholder="?" />
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-green">J'ai trouvé !</button>
+                            </div>                        
+                        </form>
+                        <% } %>
+                    <% if(flash && flash.status) { %>
+                    <div class="alert alert-<%= flash.status %>">
+                        <%= flash.message %>
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>

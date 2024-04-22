@@ -30,3 +30,13 @@ h2 {
     color: black;
     font-weight: bold;
 }
+
+.btn-green:hover {
+    background-color: #3C518E;
+    color: white;
+    font-weight: bold;
+}
+
+.icons-custom {
+    color: white;
+}
