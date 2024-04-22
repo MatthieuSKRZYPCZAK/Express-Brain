@@ -1,0 +1,32 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    height: 50px;
+    background-color: #3C518E;
+}
+
+h1 {
+    padding-top: 2rem;
+    color: #3C518E;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #3C518E;
+}
+
+.btn-green {
+    background-color: #95B259;
+    color: black;
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+<%- include('_header') %>
+    <div>
+        <h1 class="bold">
+            <%= title %>
+        </h1>
+        <h2>Découvrez en un minimul de tour le nombre qui se cache derrière la carte mistère !</h2>
+
+        <div class="d-flex justify-content-center pt-5">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Qui suis-je ?</h5>
+                    <p class="card-text">Quel nombre se cache derrière cette carte mistère ?</p>
+                    <form action="/mistere" method="post">
+                        <div class="mb-3">
+                            <label for="city" class="form-label"></label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="?" />
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-green">J'ai trouvé !</button>
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('_footer') %>
